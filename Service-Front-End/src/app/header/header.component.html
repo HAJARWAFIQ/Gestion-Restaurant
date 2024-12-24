@@ -1,0 +1,49 @@
+<header >
+  <nav class="navbar">
+    <!-- Logo à gauche -->
+    <div class="logo">
+      <img src="assets/images/logo.png" alt="Restaurant Logo" />
+    </div>
+
+    <!-- Liens de navigation au centre -->
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+     <!-- <a routerLink="/menu">Menu</a> -->
+      <a (click)="navigateToMenu()">Menu</a>
+      <li><a href="#">Reservation</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <!-- Icône du panier et bouton Signup à droite -->
+    <div class="auth">
+      <a (click)="goToCart()">
+        <i class="fa fa-shopping-bag custom-icon"></i>
+      </a>
+           <!-- Affichage du nom d'utilisateur si connecté -->
+      <!-- Affichage du nom d'utilisateur si connecté -->
+
+      <div *ngIf="isUserLoggedIn">
+        <span style="color: black;">Bienvenue, {{ username }}</span>
+        <button class="logout-btn" (click)="logout()">Logout</button>
+
+      </div>
+      <div *ngIf="!isUserLoggedIn">
+        <button class="signin-btn" (click)="navigateToSignIn()">Sign In</button>
+        
+        <button class="signup-btn" (click)="navigateToSignUp()">Sign Up</button>
+      </div>
+    </div>
+    <!--
+    <header>
+      <div *ngIf="username">
+        Bienvenue, {{ username }} !
+      </div>
+      <div *ngIf="!username">
+        Connectez-vous pour accéder à votre espace.
+      </div>
+              <button class="logout-btn" (click)="logout()">Logout</button>
+    </header>
+*/-->
+  </nav>
+</header>

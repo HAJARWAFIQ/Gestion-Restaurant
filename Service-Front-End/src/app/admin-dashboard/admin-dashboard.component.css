@@ -1,0 +1,103 @@
+/* Réinitialisation des styles globaux */
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+/* Dashboard layout */
+.dashboard {
+  display: flex; /* Alignement en ligne avec Flexbox */
+  min-height: 100vh; /* Hauteur complète de la page */
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar styles */
+.sidebar {
+  background-color: #464646; /* Bleu marine */
+  color: #ecf0f1;
+  width: 250px; /* Largeur fixe pour la barre latérale */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box; /* Inclure le padding dans la largeur */
+}
+
+/* Main content styles */
+.main-content {
+  flex: 1; /* Prend tout l'espace restant */
+  background-color: #f5f5f5; /* Couleur de fond clair */
+  color: #333;
+  padding: 20px; /* Ajoutez un padding si nécessaire pour l'espacement interne */
+  box-sizing: border-box;
+  overflow: auto; /* Permet le défilement si le contenu déborde */
+  margin: 0; /* Élimine tout espace externe */
+  display: block; /* Remplacez flex si ce n'est pas strictement nécessaire */
+}
+
+/* Feature list */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  margin-bottom: 10px;
+}
+
+.feature-link {
+  text-decoration: none;
+  color: #ecf0f1;
+  font-size: 16px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.feature-link i {
+  margin-right: 10px;
+}
+
+.feature-link:hover,
+.feature-link.active {
+  background-color: #ffc107;
+}
+
+/* Logout button */
+.logout-section {
+  margin-top: auto; /* Place le bouton logout tout en bas */
+  text-align: center;
+}
+
+.btn-custom {
+  background-color: #ffc107;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.navbar .logo img {
+  height: 80px; /* Ajuste la taille du logo */
+  width: 10px;
+}
+.logo-section {
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center;    /* Centre verticalement */
+  height: 120px;          /* Ajustez la hauteur pour votre besoin */
+  margin-bottom: 20px;    /* Espace en dessous */
+  padding: 10px;          /* Espacement interne */
+}
+
+.logo {
+  max-width: 100%;        /* Largeur maximale de l'image */
+  max-height: 100%;       /* Hauteur maximale de l'image */
+  object-fit: contain;    /* Préserve les proportions */
+  border-radius: 10px;    /* Optionnel : coins arrondis */
+}

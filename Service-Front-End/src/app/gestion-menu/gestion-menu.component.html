@@ -1,0 +1,146 @@
+<div *ngIf="!isMenuVisible && !afficherFormulaireModification">
+  <div class="button-container">
+    <button type="button" class="btn btn-dark1" (click)="toggleMenuDisplay()">Afficher Menu</button>
+  </div>
+   <form  [formGroup]="menuForm" (ngSubmit)="submit()">
+  <div>
+    <label>Nom</label>
+    <input formControlName="name" type="text" />
+  </div>
+  <div>
+    <label>Description</label>
+    <textarea formControlName="description"></textarea>
+  </div>
+  <div>
+    <label>Catégorie</label>
+    <input formControlName="category" type="text" />
+  </div>
+  <div>
+    <label>Prix</label>
+    <input formControlName="price" type="number" />
+  </div>
+  <div>
+    <label for="isPromotion">Promotion</label>
+    <label class="switch">
+      <input id="isPromotion" formControlName="isPromotion" type="checkbox" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <div>
+    <label>Image</label>
+    <input type="file" (change)="onFileChange($event)" />
+  </div>
+  <button type="submit" [disabled]="menuForm.invalid">Ajouter</button>
+ </form>
+  </div>
+
+<div *ngIf="isMenuVisible">
+  <div class="card mb-4">
+    <div class="d-flex justify-content-between align-items-center bg-white p-3">
+      <h3 class="card-title m-0 me-3">Menus</h3>
+      <button type="button" class="btn btn-dark1" (click)="toggleMenuDisplay()">Ajouter Menu</button>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-borderless">
+        <thead>
+          <tr class="border-bottom">
+            <th class="text-center"><input type="checkbox" (change)="toggleSelectAll($event)" /></th>
+            <th class="text-center">Image</th>
+            <th class="text-center">Nom</th>
+            <th class="text-center">Description</th>
+            <th class="text-center">Catégorie</th>
+            <th class="text-center">Prix</th>
+            <th class="text-center">Promotion</th>
+            <th class="text-center">Actions</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let menu of menus">
+            <td class="text-center th-with-padding"><input type="checkbox"  /></td>
+            <td class="text-center th-with-padding">
+              <img *ngIf="menu.image" [src]="'data:image/jpeg;base64,' + menu.image" alt="Image du menu"class="product-image" />
+            </td>
+            <td class="text-center th-with-padding">{{ menu.name }}</td>
+            <td class="text-center">
+              <span class="fas fa-ellipsis-h ellipsis-icon th-with-padding" (click)="openModal('description', menu)" style="cursor: pointer; font-size: 1.5em; color: #3e3935;"></span>
+            </td>
+            <td class="text-center th-with-padding">{{ menu.category }}</td>
+            <td class="text-center th-with-padding">{{ menu.price | currency }}</td>
+            <td class="text-center th-with-padding">{{ menu.isPromotion ? 'Oui' : 'Non' }}</td>
+
+            <td class="text-center th-with-padding">
+              <button class="btn btn-link p-0 th-with-padding" (click)="selectionnerMenu(menu)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn btn-link p-0 ms-2 th-with-padding" (click)="deleteMenu(menu)">
+                <i class="fas fa-trash-alt"  style="font-size: 1.2em; color: #ffc107;"></i>
+              </button>
+            </td>
+
+
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pagination -->
+      <div class="d-flex justify-content-between align-items-center mt-3">
+        <div>Showing {{ startIndex }} to {{ endIndex }} of {{ menus.length }} results</div>
+        <div>
+          <button class="btn btn-link" [disabled]="currentPage === 1" (click)="previousPage()">Previous</button>
+          <button class="btn btn-link" [disabled]="currentPage === totalPages" (click)="nextPage()">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Modal for Description -->
+    <div class="modal fade" id="descriptionModal" tabindex="-1" aria-labelledby="descriptionModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="descriptionModalLabel">Description</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            {{ modalContent }}
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
+<!--Modification -->
+<div *ngIf="!isMenuVisible && afficherFormulaireModification">
+  <form [formGroup]="menuForm" (ngSubmit)="onSubmit1()">
+    <div>
+      <label>Nom</label>
+      <input formControlName="name" type="text" />
+    </div>
+    <div>
+      <label>Description</label>
+      <textarea formControlName="description"></textarea>
+    </div>
+    <div>
+      <label>Catégorie</label>
+      <input formControlName="category" type="text" />
+    </div>
+    <div>
+      <label>Prix</label>
+      <input formControlName="price" type="number" />
+    </div>
+    <div>
+      <label for="isPromotion">Promotion</label>
+      <label class="switch">
+        <input id="isPromotion" formControlName="isPromotion" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+    </div>
+  <div>
+    <label>Image</label>
+    <input type="file" (change)="onFileChange($event)" />
+  </div>
+    <button type="submit" >Modifier</button>
+  </form>
+</div>

@@ -1,0 +1,20 @@
+<div class="creer-creneau">
+    <h2>Créer un créneau</h2>
+  
+    <!-- Formulaire pour sélectionner la date et l'heure -->
+    <form (ngSubmit)="creerCreneau()">
+      <label for="dateTime">Choisissez la date et l'heure :</label>
+      <input
+        id="dateTime"
+        type="datetime-local"
+        [(ngModel)]="creneau.dateTime"
+        name="dateTime"
+        required
+      />
+  
+      <button type="submit">Créer un créneau</button>
+    </form>
+  
+    <p *ngIf="message">{{ message }}</p>
+  </div>
+  

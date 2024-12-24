@@ -1,0 +1,17 @@
+{
+  "/api": {
+    "target": "http://localhost:8082/api/v1/users",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/login": {
+    "target": "http://localhost:8082/login",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/http://localhost:8090/graphql": {
+    "target": "http://localhost:8082/login",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

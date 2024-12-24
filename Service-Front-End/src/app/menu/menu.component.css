@@ -1,0 +1,93 @@
+.menu-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Trois plats par ligne */
+  gap: 20px; /* Espacement entre les plats */
+  margin: 20px;
+  margin-left: 270px; /* Espacement à gauche pour le filtrage */
+}
+
+.menu-item {
+  text-align: center;
+  background-color: #f9f9f9; /* Couleur de fond douce */
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+  padding: 15px;
+  position: relative;
+}
+
+.menu-image {
+  width: 130px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.menu-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.menu-price {
+  font-size: 16px;
+  color: #ff6600; /* Couleur orange pour les prix */
+}
+
+.menu-more {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888; /* Couleur neutre */
+}
+
+.menu-more:hover {
+  color: #000; /* Changement de couleur au survol */
+}
+
+.menu-description {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.no-menu {
+  text-align: center;
+  font-size: 18px;
+  color: #888;
+  margin-top: 50px;
+}
+
+.filter-container {
+  width: 250px; /* Largeur fixe pour la barre de filtrage */
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  position: absolute;
+  bottom: 0; /* Positionnement de la barre de filtrage en bas */
+  left: 0; /* Aligné à gauche avec le conteneur menu */
+  height: calc(86vh - 40px); /* Hauteur de la fenêtre de visualisation moins la marge */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centre horizontalement */
+}
+
+.filter-item {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.filter-item label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.filter-item select {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}

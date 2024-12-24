@@ -1,0 +1,98 @@
+/* Style pour la barre de navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Espace entre logo et autres éléments */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #F1F1F1;
+  color: #fc9c07;
+  max-width: 1200px; /* Limite la largeur */
+  margin: 0 auto; /* Centre la barre de navigation */
+  box-sizing: border-box;
+}
+
+/* Logo */
+.navbar .logo img {
+  height: 80px; /* Ajuste la taille du logo */
+}
+
+/* Liens de navigation */
+.navbar .nav-links {
+  list-style-type: none;
+  display: flex;
+  gap: 40px;
+}
+
+.navbar .nav-links li {
+  display: inline-block;
+}
+
+.navbar .nav-links a {
+  color: #181818;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+/* Section d'authentification */
+.navbar .auth {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.navbar .auth i {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Bouton Signup */
+.navbar .signup-btn {
+  padding: 10px 20px;
+  background-color: #fc9c07;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px; /* Coins bien arrondis */
+  font-size: 16px;
+  font-weight: bold;
+}
+.navbar .logout-btn {
+  padding: 10px 20px;
+  background-color: #fc9c07;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 50px; /* Coins bien arrondis */
+  font-size: 16px;
+  font-weight: bold;
+}
+.navbar .signin-btn:hover {
+  background-color: #f5e4ca; /* Couleur au survol */
+}
+/* Bouton Signup */
+.navbar .signin-btn {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  border: 2px solid ;
+  color: #ffb443;
+  cursor: pointer;
+  border-radius: 50px; /* Coins bien arrondis */
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.navbar .signup-btn:hover {
+  background-color: #ffb443; /* Couleur au survol */
+}
+/* Centrage des éléments */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px; /* Largeur maximale du contenu */
+  margin: 0 auto; /* Centre horizontalement */
+  padding: 0 40px; /* Espace sur les côtés */
+}

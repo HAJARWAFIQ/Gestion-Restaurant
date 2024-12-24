@@ -1,0 +1,42 @@
+<div class="cart-container">
+  <h2>Mon Panier</h2>
+
+  <!-- Vérifie si le panier existe et s'il est vide -->
+  <div *ngIf="cartItems?.items?.length === 0">
+    <p>Votre panier est vide.</p>
+  </div>
+
+  <!-- Affiche les éléments du panier s'il est non vide -->
+  <div *ngIf="cartItems?.items?.length > 0">
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>Nom du menu</th>
+          <th>Quantité</th>
+          <th>Prix unitaire</th>
+          <th>Sous-total</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartItems.items">
+          <img [src]="'data:image/png;base64,' + item.image" alt="Image produit" width="50">
+          <td>{{ item.productName }}</td>
+          <td>{{ item.quantity }}</td>
+          <td>{{ item.price | currency:'EUR' }}</td>
+          <td>{{ item.quantity * item.price | currency:'EUR' }}</td>
+          <td>
+            <button (click)="removeItem(item)">Supprimer</button>
+            <button (click)="increaseQuantity(item)">+</button>
+            <button (click)="decreaseQuantity(item)">-</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="total">
+      <h3>Total : {{ cartItems.totalPrice | currency:'EUR' }}</h3>
+      <button (click)="placeOrder()">Passer la commande</button>
+    </div>
+  </div>
+</div>

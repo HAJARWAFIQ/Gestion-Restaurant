@@ -1,0 +1,33 @@
+<div *ngIf="menus && menus.length > 0" class="menu-container">
+  <div *ngFor="let menu of menus" class="menu-item">
+    <img [src]="'data:image/jpeg;base64,' + menu.image" alt="{{ menu.name }}" class="menu-image" *ngIf="menu.image" />
+    <h3 class="menu-name">{{ menu.name }}</h3>
+    <p class="menu-price">{{ menu.price | currency }}</p>
+    <button (click)="addToCart(+menu.id)">Acheter</button>
+    <button class="menu-more" (click)="menu.showDescription = !menu.showDescription">...</button>
+    <p class="menu-description" *ngIf="menu.showDescription">{{ menu.description }}</p>
+  </div>
+</div>
+<div *ngIf="menus.length === 0" class="no-menu">Aucun menu disponible.</div>
+<div class="filter-container">
+  <h3>Filtrer les Menus</h3>
+  <div class="filter-item">
+    <label for="category">Catégorie :</label>
+    <select id="category" (change)="onCategoryChange($event)">
+      <option value="">Tout</option>
+      <option value="Burger">Burgers</option>
+      <option value="Vegetarian">Végétariens</option>
+      <option value="Promotion">Promotions</option>
+      <!-- Ajouter d'autres catégories au besoin -->
+    </select>
+  </div>
+  <div class="filter-item">
+    <label for="priceRange">Prix :</label>
+    <select id="priceRange" (change)="onPriceRangeChange($event)">
+      <option value="">Tout</option>
+      <option value="low">Moins de 10€</option>
+      <option value="medium">10€ - 20€</option>
+      <option value="high">Plus de 20€</option>
+    </select>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="main-content">
+  <app-header *ngIf="shouldDisplayHeader()"></app-header>
+  <router-outlet></router-outlet>
+  <app-footer *ngIf="shouldDisplayFooter()"></app-footer>
+</div>

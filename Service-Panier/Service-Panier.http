@@ -1,0 +1,6 @@
+@Service_Panier_HostAddress = http://localhost:5155
+
+GET {{Service_Panier_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

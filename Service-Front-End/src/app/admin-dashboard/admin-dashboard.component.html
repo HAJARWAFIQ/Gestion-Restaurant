@@ -1,0 +1,58 @@
+<!---->
+<div class="dashboard">
+  <!-- Sidebar à gauche -->
+  <div class="sidebar">
+    <div class="logo-section">
+      <img src="assets/images/logo.png" alt="Logo" class="logo">
+    </div>
+
+    <section class="features">
+      <ul class="feature-list">
+        <li class="feature-item">
+          <a routerLink="/admin-dashboard/acceuil" class="feature-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fa fa-home"></i> Home
+          </a>
+        </li>
+        <li class="feature-item">
+          <a routerLink="/admin-dashboard/gestion-commandes" class="feature-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fa fa-tags"></i> Profile
+          </a>
+        </li>
+        <li class="feature-item">
+          <a routerLink="/admin-dashboard/gestion-commandes" class="feature-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fa fa-tags"></i> Notifications
+          </a>
+        </li>
+        <li class="feature-item">
+          <a routerLink="/admin-dashboard/gestion-menu" class="feature-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fa fa-tags"></i> Gérer les Menus
+          </a>
+        </li>
+        <li class="feature-item">
+          <a routerLink="/admin-dashboard/gestion-commandes" class="feature-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fa fa-tags"></i> Gérer les Commandes
+          </a>
+        </li>
+        <li class="feature-item">
+          <a routerLink="/admin-dashboard/gestion-reservation" class="feature-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fa fa-tags"></i> Gérer les Reservations
+          </a>
+        </li>
+        <li class="feature-item">
+          <a routerLink="/admin-dashboard/gestion-commandes" class="feature-link" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+            <i class="fa fa-tags"></i> Gérer les Administrateurs
+          </a>
+        </li>
+        <!-- Ajouter d'autres éléments ici -->
+      </ul>
+    </section>
+    <div class="logout-section">
+      <button class="btn btn-custom" (click)="logout()"><i class="fa fa-sign-out-alt"></i> Logout</button>
+    </div>
+  </div>
+
+  <!-- Contenu principal au centre -->
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

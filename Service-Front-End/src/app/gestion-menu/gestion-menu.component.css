@@ -1,0 +1,227 @@
+
+form {
+  max-width: 100%;  /* Utilise toute la largeur de son conteneur parent */
+  margin: 0 auto;   /* Centre le formulaire */
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #333;
+  display: grid;   /* Utilise une grille pour gérer l'agencement */
+  grid-template-columns: 1fr;  /* Toutes les colonnes prennent 1 fraction de la largeur disponible */
+  gap: 15px;        /* Espace entre les éléments */
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+form input[type="text"],
+form input[type="number"],
+form textarea,
+form input[type="checkbox"],
+form input[type="file"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 13px;
+  transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus,
+form input[type="checkbox"]:focus,
+form input[type="file"]:focus {
+  border-color: #007bff;
+}
+
+form button {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #ffc107;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:disabled {
+  background-color: #ffc107;
+  cursor: not-allowed;
+}
+
+form button:hover {
+  background-color: #ffc107;
+}
+
+form .error {
+  color: #dc3545;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+
+
+label.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 20px;
+}
+
+label.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+label.switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 20px;
+}
+
+label.switch .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 2px;
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #ffc107;
+}
+
+input:checked + .slider:before {
+  transform: translateX(14px);
+}
+
+
+
+
+
+
+
+.card {
+  background-color: rgb(255, 255, 255);
+}
+
+.input-group {
+  max-width: 300px;
+}
+
+.input-group .form-control {
+  border-radius: 20px;
+}
+
+.input-group .input-group-text {
+  background-color: transparent;
+  border: none;
+}
+
+.product-image {
+  width: 70px;
+  height: 60px;
+  object-fit: cover;
+}
+
+.table th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.ellipsis-icon {
+  cursor: pointer;
+  font-size: 1.5em;
+  color: #3e3935;
+}
+
+.btn-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.btn-link .fa-edit {
+  font-size: 1.2em;
+  color: #3e3935;
+}
+
+.btn-link .fa-trash {
+  font-size: 1.2em;
+  color: #FCB040;
+}
+
+.table {
+  font-family: cursive;
+  font-size: 0.9em;
+}
+
+.text-center {
+  color: rgb(77, 62, 62);
+}
+
+.card-title {
+  font-family: cursive;
+  color: rgb(77, 62, 62);
+}
+
+.product-name {
+  display: inline-block;
+  max-width: 150px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.th-with-padding {
+  padding-top: 20px;
+}
+
+.btn-dark1 {
+  background-color: #ffc107;
+}
+
+.card-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.font-text {
+  font-family: cursive;
+}
+
+
+
+/* Style global pour aligner le bouton "Afficher Menu" à droite */
+/* Style global pour aligner le bouton "Afficher Menu" à droite */
+/* Style global pour aligner le bouton à droite */
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligne le bouton à droite */
+  margin-top: 2m; /* Espacement en haut du formulaire */
+}
+

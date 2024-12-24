@@ -1,0 +1,38 @@
+type Query {
+    menus: [Menu!]!
+    menuByCategory(category: String!): [Menu!]!
+    menuById(id: ID!): Menu
+}
+
+type Mutation {
+    addMenu(
+        name: String!,
+        description: String,
+        category: String!,
+        price: Float!,
+        image: String,
+        isPromotion: Boolean
+    ): Menu
+
+    updateMenu(
+        id: ID!,
+        name: String!,
+        description: String,
+        category: String!,
+        price: Float!,
+        image: String,
+        isPromotion: Boolean
+    ): Menu
+
+    deleteMenu(id: ID!): String
+}
+
+type Menu {
+    id: ID
+    name: String
+    description: String
+    category: String
+    price: Float
+    image: String
+    isPromotion: Boolean
+}
